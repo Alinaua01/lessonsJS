@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h4>Запитай у користувача довжину сторони квадрату і виведи периметр цього квадрата</h4>
+    <p>Enter the length of the side:</p>
+    <input class="inp1" type="number">
+    <button>Сalculate </button>
+
+    <p>Perimeter of the square:</p>
+    <span class="out">0</span>
+
+    <script>
+        let a = document.querySelector('.inp1');
+        let out = document.querySelector('.out');
+
+        let button = document.querySelector('button');
+
+        button.onclick = () => {
+            out.innerHTML = +a.value*4;
+        }
+
+    </script>
+</body>
+</html>
