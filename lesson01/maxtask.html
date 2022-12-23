@@ -7,9 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h4>Запитай у користувача радіус кола і виведи площу такої окружності.</h4>
+
+    <p>Enter the radius of the circle:</p>
+    <input class="radius1" type="number">
+    <button>Calculate</button>
+
+    <p>Square:</p>
+    <span class="out">0</span>
 
 
-    
+    <script>
+        let r = document.querySelector('.radius1');
+        let out = document.querySelector('.out');
+
+        let button = document.querySelector('button');
+
+        button.onclick = () => {
+            out.innerHTML = Math.PI*(+r.value*+r.value);
+        }
+    </script>
 </body>
 </html>

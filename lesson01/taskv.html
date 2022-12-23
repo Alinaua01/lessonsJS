@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Запитай у користувача відстань в кілометрах між двома містами і за скільки годин він хоче дістатися. Порахуй швидкість, з якою необхідно рухатися, щоб встигнути вчасно.</h4>
+    
+    <p>Enter distance (km):</p>
+    <input class="inp1" type="number">
+    <p>Enter time (hours):</p>
+    <input class="inp2" type="number">
+    <button>Calculate</button>
+
+    <p>Speed:</p>
+    <span class="out">0</span>
+
+
+    <script>
+        let s = document.querySelector('.inp1');
+        let t = document.querySelector('.inp2');
+
+        let out = document.querySelector('.out');
+        let button = document.querySelector('button');
+
+        button.onclick = () => {
+            out.innerHTML = +s.value / +t.value;
+        }
+
+    </script>
+</body>
+</html>
