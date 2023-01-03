@@ -8,13 +8,13 @@
   </head>
   <body>
     <h1>Гра камінь/ножниці</h1>
+    <p> 0 = камінь 1 = ножиці 2 = бумага 3 = колодязь</p>
     <input class="inp" type="text" />
     <button>Грати</button>
     <h2>
       Ваш результат:
       <span class="out">Камінь vs Бумага</span>
-      <br>
-      <span class="out-1">0</span>
+      
     </h2>
     <script>
       let inp = document.querySelector(".inp");
@@ -27,7 +27,73 @@
 
       // 0 = камінь 1 = ножиці 2 = бумага 3 = колодязь
       button.onclick = () => {
-         out.innerHTML = `${getRandomInt(4) == 1 && "Ножниці"} vs ${inp.value}`;   
+        
+        switch (inp.value) {
+          case "Камінь": {
+            if (getRandomInt(4) == 0) {
+              out.innerHTML = 'Камінь vs Камінь = Нічия';
+            }
+            else if (getRandomInt(4) == 1) {
+              out.innerHTML = 'Камінь vs Ножниці = Виграш';
+            }
+            else if (getRandomInt(4) == 2) {
+              out.innerHTML = 'Камінь vs Папір = Поразка';
+            }
+            else if  (getRandomInt(4) == 3) {
+              out.innerHTML = 'Камінь vs Колодязь = Поразка';
+            }
+            break;
+          }
+          case "Ножниці": {
+            if (getRandomInt(4) == 0) {
+              out.innerHTML = 'Ножниці vs Камінь = Поразка';
+            }
+            else if (getRandomInt(4) == 1) {
+              out.innerHTML = 'Ножниці vs Ножниці = Нічия';
+            }
+            else if (getRandomInt(4) == 2) {
+              out.innerHTML = 'Ножниці vs Папір = Виграш';
+            }
+            else if  (getRandomInt(4) == 3) {
+              out.innerHTML = 'Ножниці vs Колодязь = Поразка';
+            }
+            break;
+          }
+          case "Папір": {
+            if (getRandomInt(4) == 0) {
+              out.innerHTML = 'Папір vs Камінь = Виграш';
+            }
+            else if (getRandomInt(4) == 1) {
+              out.innerHTML = 'Папір vs Ножниці = Поразка';
+            }
+            else if (getRandomInt(4) == 2) {
+              out.innerHTML = 'Папір vs Папір = Нічия';
+            }
+            else if  (getRandomInt(4) == 3) {
+              out.innerHTML = 'Папір vs Колодязь = Виграш';
+            }
+            break;
+          }
+          case "Колодязь": {
+            if (getRandomInt(4) == 0) {
+              out.innerHTML = 'Колодязь vs Камінь = Виграш';
+            }
+            else if (getRandomInt(4) == 1) {
+              out.innerHTML = 'Колодязь vs Ножниці = Виграш';
+            }
+            else if (getRandomInt(4) == 2) {
+              out.innerHTML = 'Колодязь vs Папір = Поразка';
+            }
+            else if  (getRandomInt(4) == 3) {
+              out.innerHTML = 'Колодязь vs Колодязь = Нічия';
+            }
+            break;
+          }
+          default: {
+            out.innerHTML = 'Невірно обрано!';
+            break;
+          }
+        }
     }
        
     
