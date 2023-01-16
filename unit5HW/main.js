@@ -207,15 +207,15 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
-    function t11() {
+
         let divs11 = document.querySelectorAll('.div-11');
         let out11 = document.querySelector('.out-11');
 
         for(let i = 0; i < divs11.length; i ++)  {
-            out11.textContent += divs11[i].innerHTML + "_";
+            out11.innerHTML += divs11[i].innerHTML + "_";
         }
-        document.querySelector('.out-11').innerHTML = out11;
-    }
+    
+
     
 }
 
@@ -230,6 +230,12 @@ document.querySelector('.b-11').onclick = t11;
 
 function t12() {
 
+    let divs12 = document.querySelectorAll('.div-12');
+
+        for (let i=0; i<divs12.length; i++) {
+            divs12[i].style.background = "orange";
+        }
+
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -238,6 +244,10 @@ document.querySelector('.b-12').onclick = t12;
 // С помощью цикла присвойте всем input .i-13 value равное 1 для первого, 2 для второго и 3 для третьего.
 
 function t13() {
+    let i13 = document.querySelectorAll('.i-13')
+    for ( let i=0; i<i13.length; i++ ) {
+        i13[i].value = i+1;
+    }
 
 }
 
@@ -251,6 +261,15 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
+    let i14 = document.querySelectorAll ('.i-14');
+    let out14 = ' ';
+
+    for (let i=0; i< i14.length; i++) {
+        if (i14[i].checked) {
+            out14 = i14[i].value;
+        }
+        document.querySelector('.out-14').innerHTML = out14;
+    }
 
 }
 
@@ -262,6 +281,11 @@ document.querySelector('.b-14').onclick = t14;
 // Подсказка (10 - i) + '_' + i + '_'
 
 function t15() {
+    let out15 = document.querySelector('.out-15');
+    
+    for (let i = 0; i <= 10; i++) {
+        out15.innerHTML += (10 - i) + '_' + i + '_';
+    }
 
 }
 
