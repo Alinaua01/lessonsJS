@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<div class="wrapper">
+    <main class="HW">
+        <section class="regist">
+            <div class="container regist__container">
+
+                <div class="regist__item">
+                        <input class="inp1" type="text" placeholder="login">
+                        <input class="inp2" type="password" placeholder="password">
+                    <label for="">
+                        <input class="inpch" type="checkbox">
+                            <span>Мені 18 років</span>
+                    </label> 
+                    <button>Registration</button>
+                    <div class="out"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="login">
+            <div class="container login_container">
+                <div class="login_item">  
+                    <input class="inp3" type="text" placeholder="login">
+                    <input class="inp4" type="password" placeholder="password">
+                    <button class="btn">Login</button>
+
+                    <div class="out1"></div>
+                </div>
+
+            
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+</div>
+
+
+
+<script>
+    let users = [];
+    let inp1 = document.querySelector('.inp1')
+    let inp2 = document.querySelector('.inp2')
+    let inp3 = document.querySelector('.inp3')
+    let inp4 = document.querySelector('.inp4')
+    let out1 = document.querySelector('.out1')
+    let inpch = document.querySelector('.inpch')
+    let out = document.querySelector('.out');
+
+    document.querySelector('button').onclick = () => {
+        let obj = {
+            login: inp1.value,
+            password: inp2.value,
+            oldAge: true
+        }
+        if (inp1.value && inp2.value && inpch.checked) {
+            users.push(obj)
+            inp1.value = ''
+            inp2.value = ''
+            out.innerHTML = '<b style="color: green"> Дякуємо, ви пройшли реєстрацію! </b>'
+        } else if (inp1.value && inp2.value && !inpch.checked) {
+             out.innerHTML = `<b style="color: red"> Підтвердіть свій вік! </b>`
+            
+        }else {
+            out.innerHTML = `<b style="color: red"> Заповніть всі поля! </b>`
+        }
+
+        console.log(users);
+    }
+
+
+
+    document.querySelector('.btn').onclick = () => {
+        for (let i=0; i<users.length; i++) {
+            if (inp3.value == users[i].login && inp4.value == users[i].password){
+                inp3.value = ''
+                inp4.value = ''
+                out1.innerHTML = '<b style="color: green"> Ви увійшли у систему! </b>'
+            }
+            else if (inp3.value == '' &&  inp4.value == ''){
+                inp3.value = ''
+                inp4.value = ''
+                out1.innerHTML = '<b style="color: red"> Заповніть всі поля! </b>'
+            } else {
+                inp3.value = ''
+                inp4.value = ''
+                out1.innerHTML = '<b style="color: red">Невірний логін чи пароль! </b>'
+
+            }
+        }
+        
+    }
+</script>
+</body>
+
+</html>
