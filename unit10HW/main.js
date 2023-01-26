@@ -155,8 +155,17 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let ar8 = [];
-
+ar8[3] = 3.14;
+ar8[4] = 17;
+ar8[6] = 5;
 function f8() {
+    let out8 = "";
+    for (let i = 0; i < ar8.length; i++) {
+        out8 += ar8[i] + '-';
+    }
+    document.querySelector('.out-8').innerHTML = out8;
+    document.querySelector('.out-8-1').innerHTML = ar8.length;
+
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -235,6 +244,13 @@ document.querySelector('.b-12').onclick = f12;
 let ar13 = ['test', 'west', 'list', 'class', 'best'];
 
 function f13() {
+    out = "";
+    let i = 0;
+    while (i < ar13.length) {
+        out += `${i} ${ar13[i]} `
+        i++;
+    }
+    document.querySelector('.out-13').innerHTML = out;
 
 }
 
@@ -265,6 +281,14 @@ document.querySelector('.b-14').onclick = f14;
 let ar15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
+    let out5 = "";
+    for ( let i=0; i< ar15.length; i++) {
+        if(ar15[i]>0) {
+            out5 += ar15[i] + " ";
+        }
+    }
+    document.querySelector('.out-15').innerHTML = out5;
+        
 
 }
 
@@ -282,6 +306,22 @@ let ar16_even = [];
 
 function f16() {
 
+    let out_even = ' ';
+    let out_odd = ' ';
+
+    for (let i=0; i<ar16.length; i++) {
+        if (ar16[i]%2 == 0) {
+            ar16_even[i] = ar16[i];
+            out_even += ar16_even[i] + " ";
+        } else {
+            ar16_odd[i] = ar16[i]
+            out_odd += ar16_odd[i] + " ";
+        }
+
+    }
+    document.querySelector('.out-16-even').innerHTML = out_even;
+    document.querySelector('.out-16-odd').innerHTML = out_odd;
+
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -295,6 +335,18 @@ document.querySelector('.b-16').onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 console.log(ar17);
 function f17() {
+
+    let out17 = 0;
+    let i=0;
+    
+    while(i<ar17.length){
+        i++;
+        if(ar17[i] > 3){
+            out17 = out17 + 1;
+        }
+    }
+    
+    document.querySelector('.out-17').innerHTML = out17;
 
 }
 
@@ -310,7 +362,13 @@ document.querySelector('.b-17').onclick = f17;
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
 function f18() {
-
+    let res18 = ar18[0];
+    for (let i=0; i<ar18.length; i++) {
+        if (res18 < ar18[i]){
+            res18 = ar18[i]
+        }
+    }
+    document.querySelector('.out-18').innerHTML = res18;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -325,6 +383,13 @@ document.querySelector('.b-18').onclick = f18;
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
 function f19() {
+    let res19 = ar19[0];
+    for (let i=0; i<ar19.length; i++) {
+        if (res19 > ar19[i]){
+            res19 = `${i}`
+        }
+    }
+    document.querySelector('.out-19').innerHTML = res19;
 
 }
 
@@ -339,6 +404,12 @@ document.querySelector('.b-19').onclick = f19;
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
+    let sum = 0;
+    let out20 = '';
+    for (let i = 0; i < ar20.length; i++) {
+        sum = sum + ar20[i];
+    }
+    document.querySelector('.out-20').innerHTML = sum;
 
 }
 
